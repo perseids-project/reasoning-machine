@@ -26,10 +26,10 @@ const quantificationFromAngle = (angle) => {
 
 const phrase = (subject, predicate, subjectQuantified, predicateQuantified, positive) => {
   const subjectQuantifier = subjectQuantified ? 'All ' : 'Some';
-  const predicateQuantifier = predicateQuantified ? 'all ' :'some ';
+  const predicateQuantifier = predicateQuantified ? 'all ' :'(some) ';
   const negationText = positive ? '' : ' not ';
 
-  return `${subjectQuantifier} ${subject} is ${negationText}${predicateQuantifier} ${predicate}.`;
+  return `${subjectQuantifier} ${subject} are ${negationText}${predicateQuantifier} ${predicate}.`;
 };
 
 // assuming order XY YZ
@@ -40,6 +40,9 @@ const resultPhrase = (
   subjectQuantified2,
   predicateQuantified2,
   positive2,
+  x,
+  y,
+  z,
 ) => {
   const invalid = 'Invalid proposition.';
 
@@ -65,7 +68,7 @@ const resultPhrase = (
     predicateQuantified2 = false;
   }
 
-  return phrase('Z', 'X', predicateQuantified2, subjectQuantified1, positive1 && positive2);
+  return phrase(z, x, predicateQuantified2, subjectQuantified1, positive1 && positive2);
 };
 
 const renderEnglishTable = (
@@ -79,6 +82,9 @@ const renderEnglishTable = (
     predicateQuantified2,
     positive2,
   ],
+  x,
+  y,
+  z,
 ) => (
   <div className={styles.image}>
     <table className={`table table-bordered ${styles.table}`}>
@@ -86,37 +92,37 @@ const renderEnglishTable = (
         <tr>
           <th>If</th>
           <td>
-            {phrase('Y', 'X', subjectQuantified1, predicateQuantified1, positive1)}
+            {phrase(y, x, subjectQuantified1, predicateQuantified1, positive1)}
           </td>
           <td>
-            {phrase('X', 'Y', subjectQuantified1, predicateQuantified1, positive1)}
+            {phrase(x, y, subjectQuantified1, predicateQuantified1, positive1)}
           </td>
           <td>
-            {phrase('Y', 'X', subjectQuantified1, predicateQuantified1, positive1)}
+            {phrase(y, x, subjectQuantified1, predicateQuantified1, positive1)}
           </td>
         </tr>
         <tr>
           <th>And</th>
           <td>
-            {phrase('Z', 'Y', subjectQuantified2, predicateQuantified2, positive2)}
+            {phrase(z, y, subjectQuantified2, predicateQuantified2, positive2)}
           </td>
           <td>
-            {phrase('Z', 'Y', subjectQuantified2, predicateQuantified2, positive2)}
+            {phrase(z, y, subjectQuantified2, predicateQuantified2, positive2)}
           </td>
           <td>
-            {phrase('Y', 'Z', subjectQuantified2, predicateQuantified2, positive2)}
+            {phrase(y, z, subjectQuantified2, predicateQuantified2, positive2)}
           </td>
         </tr>
         <tr>
           <th>Then</th>
           <td>
-            {resultPhrase(predicateQuantified1, subjectQuantified1, positive1, predicateQuantified2, subjectQuantified2, positive2)}
+            {resultPhrase(predicateQuantified1, subjectQuantified1, positive1, predicateQuantified2, subjectQuantified2, positive2, x, y, z)}
           </td>
           <td>
-            {resultPhrase(subjectQuantified1, predicateQuantified1, positive1, predicateQuantified2, subjectQuantified2, positive2)}
+            {resultPhrase(subjectQuantified1, predicateQuantified1, positive1, predicateQuantified2, subjectQuantified2, positive2, x, y, z)}
           </td>
           <td>
-            {resultPhrase(predicateQuantified1, subjectQuantified1, positive1, subjectQuantified2, predicateQuantified2, positive2)}
+            {resultPhrase(predicateQuantified1, subjectQuantified1, positive1, subjectQuantified2, predicateQuantified2, positive2, z, y, z)}
           </td>
         </tr>
       </tbody>
@@ -128,6 +134,9 @@ class Machine extends Component {
   state = {
     bottomAngle: 0,
     topAngle: 0,
+    x: 'X',
+    y: 'Y',
+    z: 'Z',
   };
 
   constructor(props) {
@@ -135,6 +144,7 @@ class Machine extends Component {
 
     this.rotateBottom = this.rotateBottom.bind(this);
     this.rotateTop = this.rotateTop.bind(this);
+    this.updateInput = this.updateInput.bind(this);
   }
 
   rotateBottom(angle) {
@@ -149,9 +159,17 @@ class Machine extends Component {
     }));
   }
 
+  updateInput(event) {
+    const { target: { value, name } } = event;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
   render() {
-    const { bottomAngle, topAngle } = this.state;
-    const { rotateTop, rotateBottom } = this;
+    const { bottomAngle, topAngle, x, y, z } = this.state;
+    const { rotateTop, rotateBottom, updateInput } = this;
 
     return (
       <div className="container">
@@ -172,7 +190,12 @@ class Machine extends Component {
             />
           </div>
           <div className="col-4">
-            {renderEnglishTable(quantificationFromAngle(bottomAngle), quantificationFromAngle(topAngle))}
+            <input name="x" type="text" value={x} onChange={updateInput} />
+            <input name="y" type="text" value={y} onChange={updateInput} />
+            <input name="z" type="text" value={z} onChange={updateInput} />
+          </div>
+          <div className="col-4">
+            {renderEnglishTable(quantificationFromAngle(bottomAngle), quantificationFromAngle(topAngle), x, y, z)}
           </div>
         </div>
         <div className="form-row text-center">
