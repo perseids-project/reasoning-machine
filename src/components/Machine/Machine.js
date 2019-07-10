@@ -86,48 +86,56 @@ const renderEnglishTable = (
   y,
   z,
 ) => (
-  <div className={styles.image}>
-    <table className={`table table-bordered ${styles.table}`}>
+  <>
+    <table className="table table-bordered">
       <tbody>
         <tr>
-          <th>If</th>
+          <th>
+            If
+          </th>
+          <th>
+            And
+          </th>
+          <th>
+            Then
+          </th>
+        </tr>
+        <tr>
           <td>
             {phrase(y, x, subjectQuantified1, predicateQuantified1, positive1)}
           </td>
+          <td>
+            {phrase(z, y, subjectQuantified2, predicateQuantified2, positive2)}
+          </td>
+          <td>
+            {resultPhrase(predicateQuantified1, subjectQuantified1, positive1, predicateQuantified2, subjectQuantified2, positive2, x, y, z)}
+          </td>
+        </tr>
+        <tr>
           <td>
             {phrase(x, y, subjectQuantified1, predicateQuantified1, positive1)}
           </td>
           <td>
-            {phrase(y, x, subjectQuantified1, predicateQuantified1, positive1)}
-          </td>
-        </tr>
-        <tr>
-          <th>And</th>
-          <td>
             {phrase(z, y, subjectQuantified2, predicateQuantified2, positive2)}
-          </td>
-          <td>
-            {phrase(z, y, subjectQuantified2, predicateQuantified2, positive2)}
-          </td>
-          <td>
-            {phrase(y, z, subjectQuantified2, predicateQuantified2, positive2)}
-          </td>
-        </tr>
-        <tr>
-          <th>Then</th>
-          <td>
-            {resultPhrase(predicateQuantified1, subjectQuantified1, positive1, predicateQuantified2, subjectQuantified2, positive2, x, y, z)}
           </td>
           <td>
             {resultPhrase(subjectQuantified1, predicateQuantified1, positive1, predicateQuantified2, subjectQuantified2, positive2, x, y, z)}
           </td>
+        </tr>
+        <tr>
           <td>
-            {resultPhrase(predicateQuantified1, subjectQuantified1, positive1, subjectQuantified2, predicateQuantified2, positive2, z, y, z)}
+            {phrase(y, x, subjectQuantified1, predicateQuantified1, positive1)}
+          </td>
+          <td>
+            {phrase(y, z, subjectQuantified2, predicateQuantified2, positive2)}
+          </td>
+          <td>
+            {resultPhrase(predicateQuantified1, subjectQuantified1, positive1, subjectQuantified2, predicateQuantified2, positive2, x, y, z)}
           </td>
         </tr>
       </tbody>
     </table>
-  </div>
+  </>
 )
 
 class Machine extends Component {
@@ -174,7 +182,7 @@ class Machine extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className={`col-8 text-center ${styles.wrapper}`}>
+          <div className={`col-6 text-center ${styles.wrapper}`}>
             <img
               src={bottom}
               className={styles.image}
@@ -189,13 +197,32 @@ class Machine extends Component {
               style={{ transform: `rotate(${topAngle}deg)` }}
             />
           </div>
-          <div className="col-4">
-            <input name="x" type="text" value={x} onChange={updateInput} />
-            <input name="y" type="text" value={y} onChange={updateInput} />
-            <input name="z" type="text" value={z} onChange={updateInput} />
-          </div>
-          <div className="col-4">
-            {renderEnglishTable(quantificationFromAngle(bottomAngle), quantificationFromAngle(topAngle), x, y, z)}
+          <div className={`col-6 text-center ${styles.wrapper}`}>
+            <div className={`${styles.image} ${styles.inputTable}`}>
+              <div className="input-group mb-1">
+                <div className="input-group-prepend">
+                  <span className="input-group-text">X</span>
+                </div>
+                <input type="text" className="form-control" aria-label="X" aria-describedby="input x" name="x" value={x} onChange={updateInput} />
+              </div>
+
+              <div className="input-group mb-1">
+                <div className="input-group-prepend">
+                  <span className="input-group-text">Y</span>
+                </div>
+                <input type="text" className="form-control" aria-label="Y" aria-describedby="input y" name="y" value={y} onChange={updateInput} />
+              </div>
+
+              <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                  <span className="input-group-text">Z</span>
+                </div>
+                <input type="text" className="form-control" aria-label="Z" aria-describedby="input z" name="z" value={z} onChange={updateInput} />
+              </div>
+
+
+              {renderEnglishTable(quantificationFromAngle(bottomAngle), quantificationFromAngle(topAngle), x, y, z)}
+            </div>
           </div>
         </div>
         <div className="form-row text-center">
