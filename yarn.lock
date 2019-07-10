@@ -9450,6 +9450,11 @@ typeface-arimo@^0.0.72:
   resolved "https://registry.yarnpkg.com/typeface-arimo/-/typeface-arimo-0.0.72.tgz#5476119bfc3d2c9478a3308c6030ddd1ec567a50"
   integrity sha512-DF6wnbqwcZx91zECeOA0LiHkjKWrq0PH6wFCnBxU7WUiP4uCQSGbES02zSimaJS/u0nlVeHAXkMyT4ma8hWPjw==
 
+typeface-tinos@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-tinos/-/typeface-tinos-0.0.72.tgz#cc6cb6a6b45df26ea11f7d4b285e0235f7656c34"
+  integrity sha512-Uvyv933bonxjj6JQTR6WWOZARNYTJ+Ul72t4kU3QZ1nVE59so8AddCQOwj1AfqxcLhtdSIYVl4NkSVr+RFlVlA==
+
 uglify-js@3.4.x:
   version "3.4.10"
   resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.4.10.tgz#9ad9563d8eb3acdfb8d38597d2af1d815f6a755f"

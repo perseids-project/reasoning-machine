@@ -41,7 +41,7 @@ const MultiChar = ({ base, left, right, aboveLeft, aboveRight }) => (
 );
 
 const Instructions = () => (
-  <div className="container pt-4">
+  <div className={`container pt-4 ${styles.text}`}>
     <div className="row">
       <div className="col-12">
         <h2 className="text-center mb-3">
