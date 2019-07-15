@@ -49,6 +49,16 @@ const Instructions = () => (
         </h2>
 
         <p>
+          <small className="mb-3">
+            [Written by Sir D'Arcy Wentworth Thompson.
+            He probably wrote these instructions around 1897.
+            The original copy of these instructions,
+            correspondence about the machine, and the machine itself can be seen
+            in the archives of the University of St. Andrews.]
+          </small>
+        </p>
+
+        <p>
           In the propositions U, A, Y, I, we quantify respectively :- subject
           and predicate, subject alone, predicate alone, and lastly, neither.
           We may symbolize this fact by writing it :-
