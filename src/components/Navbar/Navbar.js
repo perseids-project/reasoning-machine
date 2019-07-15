@@ -7,12 +7,17 @@ const renderCollapse = collapsed => (
   <Collapse isOpen={!collapsed} navbar>
     <ul className="navbar-nav mr-auto">
       <li className="nav-item">
-        <NavLink className="nav-link" to="/">
+        <NavLink className="nav-link" exact to="/">
           Reasoning machine
         </NavLink>
       </li>
       <li className="nav-item">
-        <NavLink className="nav-link" to="/instructions">
+        <NavLink className="nav-link" exact to="/about">
+          About
+        </NavLink>
+      </li>
+      <li className="nav-item">
+        <NavLink className="nav-link" exact to="/instructions">
           Instructions
         </NavLink>
       </li>

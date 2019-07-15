@@ -4,6 +4,7 @@ import { PerseidsFooter } from 'perseids-react-components';
 
 import Navbar from '../Navbar';
 import Machine from '../Machine';
+import About from '../About';
 import Instructions from '../Instructions';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 
       <Switch>
         <Route exact path="/" component={Machine} />
+        <Route exact path="/about" component={About} />
         <Route exact path="/instructions" component={Instructions} />
       </Switch>
 
