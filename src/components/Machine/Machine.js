@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import queryString from 'query-string';
 
 import styles from './Machine.module.css';
 
@@ -138,6 +139,41 @@ const renderEnglishTable = (
   </>
 )
 
+const fromQuery = ({
+  x = 'X',
+  y = 'Y',
+  z = 'Z',
+  ba = 0,
+  sa = 0,
+}) => ({
+  x,
+  y,
+  z,
+  ba: Number(ba) % 360,
+  sa: Number(sa) % 360,
+});
+
+const mod = (a, b) => {
+  const jsResult = a % b;
+
+  if (jsResult < 0) {
+    return jsResult + 360;
+  }
+
+  return jsResult;
+};
+
+const nearestAngle = (prevAngle, angle) => {
+  const firstPossibility = prevAngle + mod(angle - prevAngle, 360);
+  const secondPossibility = prevAngle - mod(prevAngle - angle, 360);
+
+  if (Math.abs(prevAngle - firstPossibility) < Math.abs(prevAngle - secondPossibility)) {
+    return firstPossibility;
+  }
+
+  return secondPossibility;
+};
+
 class Machine extends Component {
   state = {
     bottomAngle: 0,
@@ -155,24 +191,50 @@ class Machine extends Component {
     this.updateInput = this.updateInput.bind(this);
   }
 
+  static getDerivedStateFromProps(
+    { location: { search } },
+    { bottomAngle: prevBottomAngle, topAngle: prevTopAngle },
+  ) {
+    const { x, y, z, ba, sa } = fromQuery(queryString.parse(search));
+
+    const bottomAngle = Number(ba) % 360;
+    const topAngle = Number(sa) % 360;
+
+    return {
+      x,
+      y,
+      z,
+      bottomAngle: nearestAngle(prevBottomAngle, bottomAngle),
+      topAngle: nearestAngle(prevTopAngle, topAngle),
+    };
+  }
+
   rotateBottom(angle) {
-    this.setState(({ bottomAngle }) => ({
-      bottomAngle: bottomAngle + angle,
-    }));
+    const { history, location: { search } } = this.props;
+    const query = fromQuery(queryString.parse(search));
+
+    query.ba = mod(query.ba + angle, 360);
+
+    history.push({ search: queryString.stringify(query) });
   }
 
   rotateTop(angle) {
-    this.setState(({ topAngle }) => ({
-      topAngle: topAngle + angle,
-    }));
+    const { history, location: { search } } = this.props;
+    const query = fromQuery(queryString.parse(search));
+
+    query.sa = mod(query.sa + angle, 360);
+
+    history.push({ search: queryString.stringify(query) });
   }
 
   updateInput(event) {
+    const { history, location: { search } } = this.props;
     const { target: { value, name } } = event;
+    const query = fromQuery(queryString.parse(search));
 
-    this.setState({
-      [name]: value
-    });
+    query[name] = value;
+
+    history.push({ search: queryString.stringify(query) });
   }
 
   render() {
