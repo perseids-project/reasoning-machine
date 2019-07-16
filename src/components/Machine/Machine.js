@@ -303,9 +303,68 @@ class Machine extends Component {
     const { rotateTop, rotateBottom, updateInput } = this;
 
     return (
-      <div className="container">
+      <div className={`container pt-4 ${styles.text}`}>
         <div className="row">
-          <div className={`col-6 text-center ${styles.wrapper}`}>
+          <div className="col-12">
+            <h2 className="text-center mb-3">
+              D&apos;Arcy Thompson&apos;s Reasoning Machine
+            </h2>
+          </div>
+        </div>
+
+        <div className="form-row text-center">
+          <div className="col-6">
+            <h5>
+              Rotate spinner
+            </h5>
+          </div>
+          <div className="col-6">
+            <h5>
+              Rotate base-board
+            </h5>
+          </div>
+        </div>
+        <div className="form-row">
+          <div className={`${styles.buttonContainer} col-3 col-md-2 offset-md-1`}>
+            <button
+              type="button"
+              className="btn btn-secondary btn-block"
+              onClick={() => rotateTop(-rotation)}
+            >
+              ⟲
+            </button>
+          </div>
+          <div className={`${styles.buttonContainer} col-3 col-md-2`}>
+            <button
+              type="button"
+              className="btn btn-secondary btn-block"
+              onClick={() => rotateTop(rotation)}
+            >
+              ⟳
+            </button>
+          </div>
+          <div className={`${styles.buttonContainer} col-3 col-md-2 offset-md-2`}>
+            <button
+              type="button"
+              className="btn btn-secondary btn-block"
+              onClick={() => rotateBottom(-rotation)}
+            >
+              ⟲
+            </button>
+          </div>
+          <div className={`${styles.buttonContainer} col-3 col-md-2`}>
+            <button
+              type="button"
+              className="btn btn-secondary btn-block"
+              onClick={() => rotateBottom(rotation)}
+            >
+              ⟳
+            </button>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className={`col-12 col-lg-6 text-center ${styles.wrapper}`}>
             <img
               src={bottom}
               className={styles.image}
@@ -320,8 +379,8 @@ class Machine extends Component {
               style={{ transform: `rotate(${topAngle}deg)` }}
             />
           </div>
-          <div className={`col-6 text-center ${styles.wrapper}`}>
-            <div className={`${styles.image} ${styles.inputTable}`}>
+          <div className={`col-12 col-lg-6 text-center ${styles.wrapper}`}>
+            <div className={styles.inputTable}>
               <div className="input-group mb-1">
                 <div className="input-group-prepend">
                   <span className="input-group-text">X</span>
@@ -352,56 +411,6 @@ class Machine extends Component {
                 z,
               )}
             </div>
-          </div>
-        </div>
-        <div className="form-row text-center">
-          <div className="col-6">
-            <h5>
-              Rotate spinner
-            </h5>
-          </div>
-          <div className="col-6">
-            <h5>
-              Rotate base-board
-            </h5>
-          </div>
-        </div>
-        <div className="form-row">
-          <div className="col-2 offset-1">
-            <button
-              type="button"
-              className="btn btn-secondary btn-block"
-              onClick={() => rotateTop(-rotation)}
-            >
-              ⟲
-            </button>
-          </div>
-          <div className="col-2">
-            <button
-              type="button"
-              className="btn btn-secondary btn-block"
-              onClick={() => rotateTop(rotation)}
-            >
-              ⟳
-            </button>
-          </div>
-          <div className="col-2 offset-2">
-            <button
-              type="button"
-              className="btn btn-secondary btn-block"
-              onClick={() => rotateBottom(-rotation)}
-            >
-              ⟲
-            </button>
-          </div>
-          <div className="col-2">
-            <button
-              type="button"
-              className="btn btn-secondary btn-block"
-              onClick={() => rotateBottom(rotation)}
-            >
-              ⟳
-            </button>
           </div>
         </div>
       </div>

@@ -418,13 +418,92 @@ Array [
     </div>
   </header>,
   <div
-    className="container"
+    className="container pt-4 text"
   >
     <div
       className="row"
     >
       <div
-        className="col-6 text-center wrapper"
+        className="col-12"
+      >
+        <h2
+          className="text-center mb-3"
+        >
+          D'Arcy Thompson's Reasoning Machine
+        </h2>
+      </div>
+    </div>
+    <div
+      className="form-row text-center"
+    >
+      <div
+        className="col-6"
+      >
+        <h5>
+          Rotate spinner
+        </h5>
+      </div>
+      <div
+        className="col-6"
+      >
+        <h5>
+          Rotate base-board
+        </h5>
+      </div>
+    </div>
+    <div
+      className="form-row"
+    >
+      <div
+        className="buttonContainer col-3 col-md-2 offset-md-1"
+      >
+        <button
+          className="btn btn-secondary btn-block"
+          onClick={[Function]}
+          type="button"
+        >
+          ⟲
+        </button>
+      </div>
+      <div
+        className="buttonContainer col-3 col-md-2"
+      >
+        <button
+          className="btn btn-secondary btn-block"
+          onClick={[Function]}
+          type="button"
+        >
+          ⟳
+        </button>
+      </div>
+      <div
+        className="buttonContainer col-3 col-md-2 offset-md-2"
+      >
+        <button
+          className="btn btn-secondary btn-block"
+          onClick={[Function]}
+          type="button"
+        >
+          ⟲
+        </button>
+      </div>
+      <div
+        className="buttonContainer col-3 col-md-2"
+      >
+        <button
+          className="btn btn-secondary btn-block"
+          onClick={[Function]}
+          type="button"
+        >
+          ⟳
+        </button>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-12 col-lg-6 text-center wrapper"
       >
         <img
           alt="baseboard"
@@ -448,10 +527,10 @@ Array [
         />
       </div>
       <div
-        className="col-6 text-center wrapper"
+        className="col-12 col-lg-6 text-center wrapper"
       >
         <div
-          className="image inputTable"
+          className="inputTable"
         >
           <div
             className="input-group mb-1"
@@ -570,72 +649,6 @@ Array [
             </tbody>
           </table>
         </div>
-      </div>
-    </div>
-    <div
-      className="form-row text-center"
-    >
-      <div
-        className="col-6"
-      >
-        <h5>
-          Rotate spinner
-        </h5>
-      </div>
-      <div
-        className="col-6"
-      >
-        <h5>
-          Rotate base-board
-        </h5>
-      </div>
-    </div>
-    <div
-      className="form-row"
-    >
-      <div
-        className="col-2 offset-1"
-      >
-        <button
-          className="btn btn-secondary btn-block"
-          onClick={[Function]}
-          type="button"
-        >
-          ⟲
-        </button>
-      </div>
-      <div
-        className="col-2"
-      >
-        <button
-          className="btn btn-secondary btn-block"
-          onClick={[Function]}
-          type="button"
-        >
-          ⟳
-        </button>
-      </div>
-      <div
-        className="col-2 offset-2"
-      >
-        <button
-          className="btn btn-secondary btn-block"
-          onClick={[Function]}
-          type="button"
-        >
-          ⟲
-        </button>
-      </div>
-      <div
-        className="col-2"
-      >
-        <button
-          className="btn btn-secondary btn-block"
-          onClick={[Function]}
-          type="button"
-        >
-          ⟳
-        </button>
       </div>
     </div>
   </div>,
@@ -784,13 +797,92 @@ Array [
     </div>
   </header>,
   <div
-    className="container"
+    className="container pt-4 text"
   >
     <div
       className="row"
     >
       <div
-        className="col-6 text-center wrapper"
+        className="col-12"
+      >
+        <h2
+          className="text-center mb-3"
+        >
+          D'Arcy Thompson's Reasoning Machine
+        </h2>
+      </div>
+    </div>
+    <div
+      className="form-row text-center"
+    >
+      <div
+        className="col-6"
+      >
+        <h5>
+          Rotate spinner
+        </h5>
+      </div>
+      <div
+        className="col-6"
+      >
+        <h5>
+          Rotate base-board
+        </h5>
+      </div>
+    </div>
+    <div
+      className="form-row"
+    >
+      <div
+        className="buttonContainer col-3 col-md-2 offset-md-1"
+      >
+        <button
+          className="btn btn-secondary btn-block"
+          onClick={[Function]}
+          type="button"
+        >
+          ⟲
+        </button>
+      </div>
+      <div
+        className="buttonContainer col-3 col-md-2"
+      >
+        <button
+          className="btn btn-secondary btn-block"
+          onClick={[Function]}
+          type="button"
+        >
+          ⟳
+        </button>
+      </div>
+      <div
+        className="buttonContainer col-3 col-md-2 offset-md-2"
+      >
+        <button
+          className="btn btn-secondary btn-block"
+          onClick={[Function]}
+          type="button"
+        >
+          ⟲
+        </button>
+      </div>
+      <div
+        className="buttonContainer col-3 col-md-2"
+      >
+        <button
+          className="btn btn-secondary btn-block"
+          onClick={[Function]}
+          type="button"
+        >
+          ⟳
+        </button>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-12 col-lg-6 text-center wrapper"
       >
         <img
           alt="baseboard"
@@ -814,10 +906,10 @@ Array [
         />
       </div>
       <div
-        className="col-6 text-center wrapper"
+        className="col-12 col-lg-6 text-center wrapper"
       >
         <div
-          className="image inputTable"
+          className="inputTable"
         >
           <div
             className="input-group mb-1"
@@ -936,72 +1028,6 @@ Array [
             </tbody>
           </table>
         </div>
-      </div>
-    </div>
-    <div
-      className="form-row text-center"
-    >
-      <div
-        className="col-6"
-      >
-        <h5>
-          Rotate spinner
-        </h5>
-      </div>
-      <div
-        className="col-6"
-      >
-        <h5>
-          Rotate base-board
-        </h5>
-      </div>
-    </div>
-    <div
-      className="form-row"
-    >
-      <div
-        className="col-2 offset-1"
-      >
-        <button
-          className="btn btn-secondary btn-block"
-          onClick={[Function]}
-          type="button"
-        >
-          ⟲
-        </button>
-      </div>
-      <div
-        className="col-2"
-      >
-        <button
-          className="btn btn-secondary btn-block"
-          onClick={[Function]}
-          type="button"
-        >
-          ⟳
-        </button>
-      </div>
-      <div
-        className="col-2 offset-2"
-      >
-        <button
-          className="btn btn-secondary btn-block"
-          onClick={[Function]}
-          type="button"
-        >
-          ⟲
-        </button>
-      </div>
-      <div
-        className="col-2"
-      >
-        <button
-          className="btn btn-secondary btn-block"
-          onClick={[Function]}
-          type="button"
-        >
-          ⟳
-        </button>
       </div>
     </div>
   </div>,
