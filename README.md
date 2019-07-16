@@ -1,7 +1,7 @@
 # D'Arcy Thompson's Reasoning Machine
 
 Digital version of "A very simple Reasoning Machine" designed by
-[Sir D'Arcy Wentworth Thompson ](https://en.wikipedia.org/wiki/D%27Arcy_Wentworth_Thompson)
+[Sir D'Arcy Wentworth Thompson ](https://en.wikipedia.org/wiki/D%27Arcy_Wentworth_Thompson).
 
 ## Try it Out
 
