@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { PerseidsFooter } from 'perseids-react-components';
 
 import Navbar from '../Navbar';
@@ -9,7 +9,7 @@ import Instructions from '../Instructions';
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <>
       <Route path="/" component={Navbar} />
 
       <Switch>
@@ -23,7 +23,7 @@ function App() {
         report="https://github.com/perseids-project/reasoning-machine"
         github="https://github.com/perseids-project/reasoning-machine/issues"
       />
-    </Router>
+    </>
   );
 }
 
