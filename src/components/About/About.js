@@ -11,12 +11,12 @@ const About = () => (
     <div className="row">
       <div className="col-12">
         <h2 className="text-center mb-3">
-          D'Arcy Thompson's Reasoning Machine
+          D&apos;Arcy Thompson&apos;s Reasoning Machine
         </h2>
 
         <p>
           <a href="https://en.wikipedia.org/wiki/D%27Arcy_Wentworth_Thompson">
-            Sir D'Arcy Wentworth Thompson
+            Sir D&apos;Arcy Wentworth Thompson
           </a>
           {' '}
           (1860 - 1948)
@@ -34,7 +34,7 @@ const About = () => (
           Around 1897, he invented a device that he called
           {' '}
           <Link to="/">
-            "A Very Simple Reasoning Machine."
+            &quot;A Very Simple Reasoning Machine.&quot;
           </Link>
           {' '}
           This device consists of two pieces of cardboard
@@ -66,11 +66,11 @@ const About = () => (
             the University of St. Andrews
           </a>
           {' '}
-          (the university where D'Arcy Thompson taught).
+          (the university where D&apos;Arcy Thompson taught).
         </p>
 
         <p>
-          Fortunately, along with the machine itself, D'Arcy left behind
+          Fortunately, along with the machine itself, D&apos;Arcy left behind
           {' '}
           <Link to="/instructions">
             instructions
@@ -88,81 +88,78 @@ const About = () => (
           {' '}
           (1788 - 1856)
           .
-          Hamilton's system itself builds off of Aristotle's
+          Hamilton&apos;s system itself builds off of Aristotle&apos;s
           {' '}
           <a href="https://plato.stanford.edu/entries/aristotle-logic/#Syl">
             syllogistic
           </a>
           , but it doubles the number of terms by adding quantifiers
-          (i.e. <em>all of</em>, <em>some of</em>).
-          For example, where Aristotle says "all humans are animals,"
-          Hamilton sees two different statements: "all humans are <em>some</em> animals,"
-          and "all humans are <em>all</em> animals."
+          (i.e.
+          <em>all of</em>, <em>some of</em>).
+          For example, where Aristotle says &quot;all humans are animals,&quot;
+          Hamilton sees two different statements: &quot;all humans are <em>some</em> animals,&quot;
+          and &quot;all humans are <em>all</em> animals.&quot;
         </p>
 
         <p>
-          D'Arcy's machine is designed to produce valid syllogisms
-          in Hamilton's system and identify invalid ones.
+          D&apos;Arcy&apos;s machine is designed to produce valid syllogisms
+          in Hamilton&apos;s system and identify invalid ones.
           For example, aligning the basedboard to A and the spinner to A
           produces the syllogism:
         </p>
 
-        <p>
-          <ul>
-            <li>
-              <strong>
-                If
-              </strong>
-              {' '}
-              all Y are (some) X.
-            </li>
-            <li>
-              <strong>
-                And
-              </strong>
-              {' '}
-              all Z are (some) Y.
-            </li>
-            <li>
-              <strong>
-                Then
-              </strong>
-              {' '}
-              all Z are (some) X.
-            </li>
-          </ul>
-        </p>
+        <ul>
+          <li>
+            <strong>
+              If
+            </strong>
+            {' '}
+            all Y are (some) X.
+          </li>
+          <li>
+            <strong>
+              And
+            </strong>
+            {' '}
+            all Z are (some) Y.
+          </li>
+          <li>
+            <strong>
+              Then
+            </strong>
+            {' '}
+            all Z are (some) X.
+          </li>
+        </ul>
 
         <p>
           Replacing X, Y, and Z with more familiar terms makes it clear
           that this syllogism is valid:
         </p>
 
-        <p>
-          <ul>
-            <li>
-              <strong>
-                If
-              </strong>
-              {' '}
-              all <em>birds</em> are <em>animals</em>.
-            </li>
-            <li>
-              <strong>
-                And
-              </strong>
-              {' '}
-              all <em>parrots</em> are <em>birds</em>.
-            </li>
-            <li>
-              <strong>
-                Then
-              </strong>
-              {' '}
-              all <em>parrots</em> are <em>animals</em>.
-            </li>
-          </ul>
-        </p>
+        <ul>
+          <li>
+            <strong>
+              If
+            </strong>
+            {' '}
+            all <em>birds</em> are <em>animals</em>.
+          </li>
+          <li>
+            <strong>
+              And
+            </strong>
+            {' '}
+            all <em>parrots</em> are <em>birds</em>.
+          </li>
+          <li>
+            <strong>
+              Then
+            </strong>
+            {' '}
+            all <em>parrots</em> are <em>animals</em>.
+          </li>
+        </ul>
 
         <p>
           <Link to="/">

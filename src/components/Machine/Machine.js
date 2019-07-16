@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { func, shape, string } from 'prop-types';
 import queryString from 'query-string';
 
 import styles from './Machine.module.css';
@@ -8,12 +9,18 @@ import top from './top.svg';
 
 const rotation = 45;
 
-const quantificationFromAngle = (angle) => {
-  if (angle < 0) {
-    angle = 360 + (angle % 360);
+const mod = (a, b) => {
+  const jsResult = a % b;
+
+  if (jsResult < 0) {
+    return jsResult + 360;
   }
 
-  return {
+  return jsResult;
+};
+
+const quantificationFromAngle = angle => (
+  {
     0: [true, false, true],
     45: [true, true, true],
     90: [false, false, false],
@@ -22,12 +29,12 @@ const quantificationFromAngle = (angle) => {
     225: [true, true, false],
     270: [false, false, true],
     315: [false, true, true],
-  }[angle % 360]
-};
+  }[mod(angle, 360)]
+);
 
 const phrase = (subject, predicate, subjectQuantified, predicateQuantified, positive) => {
   const subjectQuantifier = subjectQuantified ? 'All ' : 'Some';
-  const predicateQuantifier = predicateQuantified ? 'all ' :'(some) ';
+  const predicateQuantifier = predicateQuantified ? 'all ' : '(some) ';
   const negationText = positive ? '' : ' not ';
 
   return `${subjectQuantifier} ${subject} are ${negationText}${predicateQuantifier} ${predicate}.`;
@@ -51,25 +58,50 @@ const resultPhrase = (
 
   if (!predicateQuantified1 && !subjectQuantified2) return invalid;
 
+  let finalSubjectQuantified1 = subjectQuantified1;
+  let finalPredicateQuantified2 = predicateQuantified2;
+
   // D'Arcy's rules don't match the board
   // These are derived from the board
-  if (positive1 && subjectQuantified1 && predicateQuantified1 && positive2 && predicateQuantified2) {
-    subjectQuantified1 = false;
+  if (positive1
+    && subjectQuantified1
+    && predicateQuantified1
+    && positive2
+    && predicateQuantified2) {
+    finalSubjectQuantified1 = false;
   }
-  if (positive1 && subjectQuantified1 && predicateQuantified1 && positive2 && !subjectQuantified2 && !predicateQuantified2) {
-    subjectQuantified1 = false;
+  if (positive1
+    && subjectQuantified1
+    && predicateQuantified1
+    && positive2
+    && !subjectQuantified2
+    && !predicateQuantified2) {
+    finalSubjectQuantified1 = false;
   }
-  if (positive2 && subjectQuantified2 && predicateQuantified2 && positive1 && subjectQuantified1) {
-    predicateQuantified2 = false;
+  if (positive2
+    && subjectQuantified2
+    && predicateQuantified2
+    && positive1
+    && subjectQuantified1) {
+    finalPredicateQuantified2 = false;
   }
-  if (positive2 && subjectQuantified2 && predicateQuantified2 && positive1 && !subjectQuantified1 && !predicateQuantified1) {
-    predicateQuantified2 = false;
+  if (positive2
+    && subjectQuantified2
+    && predicateQuantified2
+    && positive1
+    && !subjectQuantified1
+    && !predicateQuantified1) {
+    finalPredicateQuantified2 = false;
   }
-  if (positive2 && subjectQuantified2 && predicateQuantified2 && !positive1 && !predicateQuantified1) {
-    predicateQuantified2 = false;
+  if (positive2
+    && subjectQuantified2
+    && predicateQuantified2
+    && !positive1
+    && !predicateQuantified1) {
+    finalPredicateQuantified2 = false;
   }
 
-  return phrase(z, x, predicateQuantified2, subjectQuantified1, positive1 && positive2);
+  return phrase(z, x, finalPredicateQuantified2, finalSubjectQuantified1, positive1 && positive2);
 };
 
 const renderEnglishTable = (
@@ -109,7 +141,17 @@ const renderEnglishTable = (
             {phrase(z, y, subjectQuantified2, predicateQuantified2, positive2)}
           </td>
           <td>
-            {resultPhrase(predicateQuantified1, subjectQuantified1, positive1, predicateQuantified2, subjectQuantified2, positive2, x, y, z)}
+            {resultPhrase(
+              predicateQuantified1,
+              subjectQuantified1,
+              positive1,
+              predicateQuantified2,
+              subjectQuantified2,
+              positive2,
+              x,
+              y,
+              z,
+            )}
           </td>
         </tr>
         <tr>
@@ -120,7 +162,17 @@ const renderEnglishTable = (
             {phrase(z, y, subjectQuantified2, predicateQuantified2, positive2)}
           </td>
           <td>
-            {resultPhrase(subjectQuantified1, predicateQuantified1, positive1, predicateQuantified2, subjectQuantified2, positive2, x, y, z)}
+            {resultPhrase(
+              subjectQuantified1,
+              predicateQuantified1,
+              positive1,
+              predicateQuantified2,
+              subjectQuantified2,
+              positive2,
+              x,
+              y,
+              z,
+            )}
           </td>
         </tr>
         <tr>
@@ -131,13 +183,23 @@ const renderEnglishTable = (
             {phrase(y, z, subjectQuantified2, predicateQuantified2, positive2)}
           </td>
           <td>
-            {resultPhrase(predicateQuantified1, subjectQuantified1, positive1, subjectQuantified2, predicateQuantified2, positive2, x, y, z)}
+            {resultPhrase(
+              predicateQuantified1,
+              subjectQuantified1,
+              positive1,
+              subjectQuantified2,
+              predicateQuantified2,
+              positive2,
+              x,
+              y,
+              z,
+            )}
           </td>
         </tr>
       </tbody>
     </table>
   </>
-)
+);
 
 const fromQuery = ({
   x = 'X',
@@ -153,16 +215,6 @@ const fromQuery = ({
   sa: Number(sa) % 360,
 });
 
-const mod = (a, b) => {
-  const jsResult = a % b;
-
-  if (jsResult < 0) {
-    return jsResult + 360;
-  }
-
-  return jsResult;
-};
-
 const nearestAngle = (prevAngle, angle) => {
   const firstPossibility = prevAngle + mod(angle - prevAngle, 360);
   const secondPossibility = prevAngle - mod(prevAngle - angle, 360);
@@ -175,6 +227,31 @@ const nearestAngle = (prevAngle, angle) => {
 };
 
 class Machine extends Component {
+  static propTypes = {
+    history: shape({ push: func }).isRequired,
+    location: shape({ search: string }).isRequired,
+  };
+
+  static getDerivedStateFromProps(
+    { location: { search } },
+    { bottomAngle: prevBottomAngle, topAngle: prevTopAngle },
+  ) {
+    const {
+      x, y, z, ba, sa,
+    } = fromQuery(queryString.parse(search));
+
+    const bottomAngle = Number(ba) % 360;
+    const topAngle = Number(sa) % 360;
+
+    return {
+      x,
+      y,
+      z,
+      bottomAngle: nearestAngle(prevBottomAngle, bottomAngle),
+      topAngle: nearestAngle(prevTopAngle, topAngle),
+    };
+  }
+
   state = {
     bottomAngle: 0,
     topAngle: 0,
@@ -189,24 +266,6 @@ class Machine extends Component {
     this.rotateBottom = this.rotateBottom.bind(this);
     this.rotateTop = this.rotateTop.bind(this);
     this.updateInput = this.updateInput.bind(this);
-  }
-
-  static getDerivedStateFromProps(
-    { location: { search } },
-    { bottomAngle: prevBottomAngle, topAngle: prevTopAngle },
-  ) {
-    const { x, y, z, ba, sa } = fromQuery(queryString.parse(search));
-
-    const bottomAngle = Number(ba) % 360;
-    const topAngle = Number(sa) % 360;
-
-    return {
-      x,
-      y,
-      z,
-      bottomAngle: nearestAngle(prevBottomAngle, bottomAngle),
-      topAngle: nearestAngle(prevTopAngle, topAngle),
-    };
   }
 
   rotateBottom(angle) {
@@ -238,7 +297,9 @@ class Machine extends Component {
   }
 
   render() {
-    const { bottomAngle, topAngle, x, y, z } = this.state;
+    const {
+      bottomAngle, topAngle, x, y, z,
+    } = this.state;
     const { rotateTop, rotateBottom, updateInput } = this;
 
     return (
@@ -283,7 +344,13 @@ class Machine extends Component {
               </div>
 
 
-              {renderEnglishTable(quantificationFromAngle(bottomAngle), quantificationFromAngle(topAngle), x, y, z)}
+              {renderEnglishTable(
+                quantificationFromAngle(bottomAngle),
+                quantificationFromAngle(topAngle),
+                x,
+                y,
+                z,
+              )}
             </div>
           </div>
         </div>

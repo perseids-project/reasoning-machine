@@ -1,0 +1,22 @@
+.multichar {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.multichar tbody {
+  vertical-align: bottom;
+}
+
+.multichar small {
+  vertical-align: bottom;
+}
+
+.multichar td {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.multicharTop {
+  line-height: 0.7;
+}
