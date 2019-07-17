@@ -93,10 +93,11 @@ const About = () => (
           <a href="https://plato.stanford.edu/entries/aristotle-logic/#Syl">
             syllogistic
           </a>
-          , but it doubles the number of terms by adding quantifiers
+          , but it doubles the number of terms by adding quantification
           (i.e.
+          {' '}
           <em>all of</em>, <em>some of</em>).
-          For example, where Aristotle says &quot;all humans are animals,&quot;
+          For example, where Aristotle might say &quot;all humans are animals,&quot;
           Hamilton sees two different statements: &quot;all humans are <em>some</em> animals,&quot;
           and &quot;all humans are <em>all</em> animals.&quot;
         </p>

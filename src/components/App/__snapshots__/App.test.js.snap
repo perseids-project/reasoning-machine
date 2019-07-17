@@ -168,7 +168,8 @@ Array [
           >
             syllogistic
           </a>
-          , but it doubles the number of terms by adding quantifiers (i.e.
+          , but it doubles the number of terms by adding quantification (i.e.
+           
           <em>
             all of
           </em>
@@ -176,7 +177,7 @@ Array [
           <em>
             some of
           </em>
-          ). For example, where Aristotle says "all humans are animals," Hamilton sees two different statements: "all humans are 
+          ). For example, where Aristotle might say "all humans are animals," Hamilton sees two different statements: "all humans are 
           <em>
             some
           </em>
