@@ -1,19 +1,27 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { hydrate, render } from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import './index.css';
 import App from './components/App';
-import * as serviceWorker from './serviceWorker';
+import { unregister } from './serviceWorker';
 
+import 'typeface-tinos';
 import 'typeface-arimo';
+
+import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'perseids-react-components/build/css/index.css';
-import 'typeface-tinos';
 
-ReactDOM.render(
+const rootElement = document.getElementById('root');
+const rootComponent = (
   <Router basename={process.env.PUBLIC_URL}>
     <App />
-  </Router>,
-  document.getElementById('root')
+  </Router>
 );
-serviceWorker.unregister();
+
+if (rootElement.hasChildNodes()) {
+  hydrate(rootComponent, rootElement);
+} else {
+  render(rootComponent, rootElement);
+}
+
+unregister();
