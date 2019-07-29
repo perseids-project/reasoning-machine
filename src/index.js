@@ -18,10 +18,6 @@ const rootComponent = (
   </Router>
 );
 
-if (rootElement.hasChildNodes()) {
-  hydrate(rootComponent, rootElement);
-} else {
-  render(rootComponent, rootElement);
-}
+render(rootComponent, rootElement);
 
 unregister();
