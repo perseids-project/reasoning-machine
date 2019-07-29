@@ -600,7 +600,7 @@ Array [
             />
           </div>
           <table
-            className="table table-bordered"
+            className="table table-striped table-bordered"
           >
             <tbody>
               <tr>
@@ -979,7 +979,7 @@ Array [
             />
           </div>
           <table
-            className="table table-bordered"
+            className="table table-striped table-bordered"
           >
             <tbody>
               <tr>
