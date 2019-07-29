@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5b3a9d43531007918be08bc71680b079",
+    "revision": "efbfa83791850d4b16a3296c3a87ab1d",
     "url": "/reasoning-machine/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/reasoning-machine/static/css/2.8492df0f.chunk.css"
   },
   {
-    "revision": "7d402628f87b63f05150",
+    "revision": "49a7381c344275090812",
     "url": "/reasoning-machine/static/css/main.9cb4b77d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/reasoning-machine/static/js/2.e2d7962d.chunk.js"
   },
   {
-    "revision": "7d402628f87b63f05150",
-    "url": "/reasoning-machine/static/js/main.72c8be1c.chunk.js"
+    "revision": "49a7381c344275090812",
+    "url": "/reasoning-machine/static/js/main.abf0c89d.chunk.js"
   },
   {
     "revision": "9b259671d00381848856",
