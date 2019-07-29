@@ -1,0 +1,32 @@
+.wrapper {
+  position: relative;
+}
+
+.image {
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  right: 0;
+  height: 50vh;
+  transition: transform 0.8s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .image {
+    height: 65vh;
+  }
+}
+
+@media (min-width: 992px) {
+  .image {
+    height: unset;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .image {
+    max-width: 85%;
+  }
+}

@@ -1,6 +1,5 @@
 import React from 'react';
-import { shape, string } from 'prop-types';
-import queryString from 'query-string';
+import { number, string } from 'prop-types';
 
 const quantificationFromAngle = (angle) => (
   {
@@ -87,18 +86,13 @@ const resultPhrase = (
   return phrase(z, x, finalPredicateQuantified2, finalSubjectQuantified1, positive1 && positive2);
 };
 
-const Table = ({ location: { search } }) => {
-  const {
-    x = 'X',
-    y = 'Y',
-    z = 'Z',
-    ba = 0,
-    sa = 0,
-  } = queryString.parse(search);
-
-  const bottomAngle = Number(ba) % 360;
-  const topAngle = Number(sa) % 360;
-
+const Table = ({
+  x,
+  y,
+  z,
+  bottomAngle,
+  topAngle,
+}) => {
   const [
     subjectQuantified1,
     predicateQuantified1,
@@ -112,7 +106,7 @@ const Table = ({ location: { search } }) => {
   ] = quantificationFromAngle(topAngle);
 
   return (
-    <table className="table table-bordered">
+    <table className="table table-striped table-bordered">
       <tbody>
         <tr>
           <th>
@@ -194,7 +188,11 @@ const Table = ({ location: { search } }) => {
 };
 
 Table.propTypes = {
-  location: shape({ search: string }).isRequired,
+  x: string.isRequired,
+  y: string.isRequired,
+  z: string.isRequired,
+  bottomAngle: number.isRequired,
+  topAngle: number.isRequired,
 };
 
 export default Table;

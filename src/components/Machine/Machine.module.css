@@ -11,16 +11,6 @@
   z-index: 100;
 }
 
-.image {
-  left: 0;
-  margin-left: auto;
-  margin-right: auto;
-  position: absolute;
-  right: 0;
-  height: 50vh;
-  transition: transform 0.8s ease-in-out;
-}
-
 .inputTable {
   margin-top: 50vh;
   margin-left: 10vh;
@@ -29,28 +19,13 @@
 }
 
 @media (min-width: 768px) {
-  .image {
-    height: 65vh;
-  }
-
   .inputTable {
     margin-top: 65vh;
   }
 }
 
 @media (min-width: 992px) {
-  .image {
-    height: unset;
-    max-width: 100%;
-  }
-
   .inputTable {
     margin-top: 30px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .image {
-    max-width: 85%;
   }
 }

@@ -3,17 +3,15 @@ import { func, shape, string } from 'prop-types';
 import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 
+import Spinner from '../Spinner';
 import Table from '../Table';
 
 import styles from './Machine.module.css';
 
-import bottom from './bottom.svg';
-import top from './top.svg';
-
 const rotation = 45;
 
-const mod = (a, b) => {
-  const jsResult = a % b;
+const mod = (a) => {
+  const jsResult = a % 360;
 
   if (jsResult < 0) {
     return jsResult + 360;
@@ -22,63 +20,28 @@ const mod = (a, b) => {
   return jsResult;
 };
 
-const fromQuery = ({
-  x = 'X',
-  y = 'Y',
-  z = 'Z',
-  ba = 0,
-  sa = 0,
-}) => ({
-  x,
-  y,
-  z,
-  ba: Number(ba) % 360,
-  sa: Number(sa) % 360,
-});
+const fromQuery = (search) => {
+  const {
+    x = 'X',
+    y = 'Y',
+    z = 'Z',
+    ba = 0,
+    sa = 0,
+  } = queryString.parse(search);
 
-const nearestAngle = (prevAngle, angle) => {
-  const firstPossibility = prevAngle + mod(angle - prevAngle, 360);
-  const secondPossibility = prevAngle - mod(prevAngle - angle, 360);
-
-  if (Math.abs(prevAngle - firstPossibility) < Math.abs(prevAngle - secondPossibility)) {
-    return firstPossibility;
-  }
-
-  return secondPossibility;
+  return {
+    x,
+    y,
+    z,
+    ba: Number(ba),
+    sa: Number(sa),
+  };
 };
 
 class Machine extends Component {
   static propTypes = {
     history: shape({ push: func }).isRequired,
     location: shape({ search: string }).isRequired,
-  };
-
-  static getDerivedStateFromProps(
-    { location: { search } },
-    { bottomAngle: prevBottomAngle, topAngle: prevTopAngle },
-  ) {
-    const {
-      x, y, z, ba, sa,
-    } = fromQuery(queryString.parse(search));
-
-    const bottomAngle = Number(ba) % 360;
-    const topAngle = Number(sa) % 360;
-
-    return {
-      x,
-      y,
-      z,
-      bottomAngle: nearestAngle(prevBottomAngle, bottomAngle),
-      topAngle: nearestAngle(prevTopAngle, topAngle),
-    };
-  }
-
-  state = {
-    bottomAngle: 0,
-    topAngle: 0,
-    x: 'X',
-    y: 'Y',
-    z: 'Z',
   };
 
   constructor(props) {
@@ -91,18 +54,18 @@ class Machine extends Component {
 
   rotateBottomLink(angle) {
     const { location: { search } } = this.props;
-    const query = fromQuery(queryString.parse(search));
+    const query = fromQuery(search);
 
-    query.ba = mod(query.ba + angle, 360);
+    query.ba = mod(query.ba + angle);
 
     return `./?${queryString.stringify(query)}`;
   }
 
   rotateTopLink(angle) {
     const { location: { search } } = this.props;
-    const query = fromQuery(queryString.parse(search));
+    const query = fromQuery(search);
 
-    query.sa = mod(query.sa + angle, 360);
+    query.sa = mod(query.sa + angle);
 
     return `./?${queryString.stringify(query)}`;
   }
@@ -110,7 +73,7 @@ class Machine extends Component {
   updateInput(event) {
     const { history, location: { search } } = this.props;
     const { target: { value, name } } = event;
-    const query = fromQuery(queryString.parse(search));
+    const query = fromQuery(search);
 
     query[name] = value;
 
@@ -118,10 +81,14 @@ class Machine extends Component {
   }
 
   render() {
+    const { location: { search } } = this.props;
     const {
-      bottomAngle, topAngle, x, y, z,
-    } = this.state;
-    const { location } = this.props;
+      x = 'X',
+      y = 'Y',
+      z = 'Z',
+      ba: bottomAngle = 0,
+      sa: topAngle = 0,
+    } = fromQuery(search);
     const { rotateBottomLink, rotateTopLink, updateInput } = this;
 
     return (
@@ -182,21 +149,8 @@ class Machine extends Component {
         </div>
 
         <div className="row">
-          <div className={`col-12 col-lg-6 text-center ${styles.wrapper}`}>
-            <img
-              src={bottom}
-              className={styles.image}
-              alt="baseboard"
-              style={{ transform: `rotate(${bottomAngle}deg)` }}
-            />
+          <Spinner bottomAngle={bottomAngle} topAngle={topAngle} />
 
-            <img
-              src={top}
-              className={styles.image}
-              alt="spinner"
-              style={{ transform: `rotate(${topAngle}deg)` }}
-            />
-          </div>
           <div className={`col-12 col-lg-6 text-center ${styles.wrapper}`}>
             <div className={styles.inputTable}>
               <div className="input-group mb-1">
@@ -221,7 +175,13 @@ class Machine extends Component {
               </div>
 
 
-              <Table location={location} />
+              <Table
+                x={x}
+                y={y}
+                z={z}
+                bottomAngle={bottomAngle}
+                topAngle={topAngle}
+              />
             </div>
           </div>
         </div>
