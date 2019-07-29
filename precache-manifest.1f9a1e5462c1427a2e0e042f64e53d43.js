@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "efbfa83791850d4b16a3296c3a87ab1d",
+    "revision": "477b78024bc538e45d1b2169b433df2e",
     "url": "/reasoning-machine/index.html"
   },
   {
-    "revision": "8bbcd50c667039ed86eb",
+    "revision": "708325e4190c936b4780",
     "url": "/reasoning-machine/static/css/2.8492df0f.chunk.css"
   },
   {
-    "revision": "49a7381c344275090812",
+    "revision": "ba773d719bbbb7281f34",
     "url": "/reasoning-machine/static/css/main.9cb4b77d.chunk.css"
   },
   {
-    "revision": "8bbcd50c667039ed86eb",
-    "url": "/reasoning-machine/static/js/2.e2d7962d.chunk.js"
+    "revision": "708325e4190c936b4780",
+    "url": "/reasoning-machine/static/js/2.89fca854.chunk.js"
   },
   {
-    "revision": "49a7381c344275090812",
-    "url": "/reasoning-machine/static/js/main.abf0c89d.chunk.js"
+    "revision": "ba773d719bbbb7281f34",
+    "url": "/reasoning-machine/static/js/main.323cc7ee.chunk.js"
   },
   {
     "revision": "9b259671d00381848856",
