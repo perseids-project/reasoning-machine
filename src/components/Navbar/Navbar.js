@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { NavbarToggler, Collapse } from 'reactstrap';
 import { PerseidsHeader } from 'perseids-react-components';
 
-const renderCollapse = collapsed => (
+const renderCollapse = (collapsed) => (
   <Collapse isOpen={!collapsed} navbar>
     <ul className="navbar-nav mr-auto">
       <li className="nav-item">
@@ -31,7 +31,7 @@ class Navbar extends Component {
   }
 
   toggleNavbar = () => {
-    this.setState(prevState => ({ collapsed: !prevState.collapsed }));
+    this.setState((prevState) => ({ collapsed: !prevState.collapsed }));
   }
 
   render() {

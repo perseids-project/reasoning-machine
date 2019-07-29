@@ -2,6 +2,7 @@
   "extends": "airbnb",
   "parser": "babel-eslint",
   "rules": {
+    "arrow-parens": ["error", "always"],
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
     "react/jsx-one-expression-per-line": 0
   },

@@ -3,6 +3,8 @@ import { func, shape, string } from 'prop-types';
 import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 
+import Table from '../Table';
+
 import styles from './Machine.module.css';
 
 import bottom from './bottom.svg';
@@ -19,188 +21,6 @@ const mod = (a, b) => {
 
   return jsResult;
 };
-
-const quantificationFromAngle = angle => (
-  {
-    0: [true, false, true],
-    45: [true, true, true],
-    90: [false, false, false],
-    135: [false, true, false],
-    180: [true, false, false],
-    225: [true, true, false],
-    270: [false, false, true],
-    315: [false, true, true],
-  }[mod(angle, 360)]
-);
-
-const phrase = (subject, predicate, subjectQuantified, predicateQuantified, positive) => {
-  const subjectQuantifier = subjectQuantified ? 'All ' : 'Some';
-  const predicateQuantifier = predicateQuantified ? 'all ' : '(some) ';
-  const negationText = positive ? '' : ' not ';
-
-  return `${subjectQuantifier} ${subject} are ${negationText}${predicateQuantifier} ${predicate}.`;
-};
-
-// assuming order XY YZ
-const resultPhrase = (
-  subjectQuantified1,
-  predicateQuantified1,
-  positive1,
-  subjectQuantified2,
-  predicateQuantified2,
-  positive2,
-  x,
-  y,
-  z,
-) => {
-  const invalid = 'Invalid proposition.';
-
-  if (!positive1 && !positive2) return invalid;
-
-  if (!predicateQuantified1 && !subjectQuantified2) return invalid;
-
-  let finalSubjectQuantified1 = subjectQuantified1;
-  let finalPredicateQuantified2 = predicateQuantified2;
-
-  // D'Arcy's rules don't match the board
-  // These are derived from the board
-  if (positive1
-    && subjectQuantified1
-    && predicateQuantified1
-    && positive2
-    && predicateQuantified2) {
-    finalSubjectQuantified1 = false;
-  }
-  if (positive1
-    && subjectQuantified1
-    && predicateQuantified1
-    && positive2
-    && !subjectQuantified2
-    && !predicateQuantified2) {
-    finalSubjectQuantified1 = false;
-  }
-  if (positive2
-    && subjectQuantified2
-    && predicateQuantified2
-    && positive1
-    && subjectQuantified1) {
-    finalPredicateQuantified2 = false;
-  }
-  if (positive2
-    && subjectQuantified2
-    && predicateQuantified2
-    && positive1
-    && !subjectQuantified1
-    && !predicateQuantified1) {
-    finalPredicateQuantified2 = false;
-  }
-  if (positive2
-    && subjectQuantified2
-    && predicateQuantified2
-    && !positive1
-    && !predicateQuantified1) {
-    finalPredicateQuantified2 = false;
-  }
-
-  return phrase(z, x, finalPredicateQuantified2, finalSubjectQuantified1, positive1 && positive2);
-};
-
-const renderEnglishTable = (
-  [
-    subjectQuantified1,
-    predicateQuantified1,
-    positive1,
-  ],
-  [
-    subjectQuantified2,
-    predicateQuantified2,
-    positive2,
-  ],
-  x,
-  y,
-  z,
-) => (
-  <>
-    <table className="table table-bordered">
-      <tbody>
-        <tr>
-          <th>
-            If
-          </th>
-          <th>
-            And
-          </th>
-          <th>
-            Then
-          </th>
-        </tr>
-        <tr>
-          <td>
-            {phrase(y, x, subjectQuantified1, predicateQuantified1, positive1)}
-          </td>
-          <td>
-            {phrase(z, y, subjectQuantified2, predicateQuantified2, positive2)}
-          </td>
-          <td>
-            {resultPhrase(
-              predicateQuantified1,
-              subjectQuantified1,
-              positive1,
-              predicateQuantified2,
-              subjectQuantified2,
-              positive2,
-              x,
-              y,
-              z,
-            )}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            {phrase(x, y, subjectQuantified1, predicateQuantified1, positive1)}
-          </td>
-          <td>
-            {phrase(z, y, subjectQuantified2, predicateQuantified2, positive2)}
-          </td>
-          <td>
-            {resultPhrase(
-              subjectQuantified1,
-              predicateQuantified1,
-              positive1,
-              predicateQuantified2,
-              subjectQuantified2,
-              positive2,
-              x,
-              y,
-              z,
-            )}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            {phrase(y, x, subjectQuantified1, predicateQuantified1, positive1)}
-          </td>
-          <td>
-            {phrase(y, z, subjectQuantified2, predicateQuantified2, positive2)}
-          </td>
-          <td>
-            {resultPhrase(
-              predicateQuantified1,
-              subjectQuantified1,
-              positive1,
-              subjectQuantified2,
-              predicateQuantified2,
-              positive2,
-              x,
-              y,
-              z,
-            )}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </>
-);
 
 const fromQuery = ({
   x = 'X',
@@ -301,6 +121,7 @@ class Machine extends Component {
     const {
       bottomAngle, topAngle, x, y, z,
     } = this.state;
+    const { location } = this.props;
     const { rotateBottomLink, rotateTopLink, updateInput } = this;
 
     return (
@@ -400,13 +221,7 @@ class Machine extends Component {
               </div>
 
 
-              {renderEnglishTable(
-                quantificationFromAngle(bottomAngle),
-                quantificationFromAngle(topAngle),
-                x,
-                y,
-                z,
-              )}
+              <Table location={location} />
             </div>
           </div>
         </div>
