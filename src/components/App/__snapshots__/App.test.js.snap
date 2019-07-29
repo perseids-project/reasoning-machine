@@ -458,46 +458,46 @@ Array [
       <div
         className="buttonContainer col-3 col-md-2 offset-md-1"
       >
-        <button
+        <a
           className="btn btn-secondary btn-block"
+          href="/?ba=0&sa=315&x=X&y=Y&z=Z"
           onClick={[Function]}
-          type="button"
         >
           ⟲
-        </button>
+        </a>
       </div>
       <div
         className="buttonContainer col-3 col-md-2"
       >
-        <button
+        <a
           className="btn btn-secondary btn-block"
+          href="/?ba=0&sa=45&x=X&y=Y&z=Z"
           onClick={[Function]}
-          type="button"
         >
           ⟳
-        </button>
+        </a>
       </div>
       <div
         className="buttonContainer col-3 col-md-2 offset-md-2"
       >
-        <button
+        <a
           className="btn btn-secondary btn-block"
+          href="/?ba=315&sa=0&x=X&y=Y&z=Z"
           onClick={[Function]}
-          type="button"
         >
           ⟲
-        </button>
+        </a>
       </div>
       <div
         className="buttonContainer col-3 col-md-2"
       >
-        <button
+        <a
           className="btn btn-secondary btn-block"
+          href="/?ba=45&sa=0&x=X&y=Y&z=Z"
           onClick={[Function]}
-          type="button"
         >
           ⟳
-        </button>
+        </a>
       </div>
     </div>
     <div
@@ -837,46 +837,46 @@ Array [
       <div
         className="buttonContainer col-3 col-md-2 offset-md-1"
       >
-        <button
+        <a
           className="btn btn-secondary btn-block"
+          href="/?ba=270&sa=270&x=parrots&y=birds&z=animals"
           onClick={[Function]}
-          type="button"
         >
           ⟲
-        </button>
+        </a>
       </div>
       <div
         className="buttonContainer col-3 col-md-2"
       >
-        <button
+        <a
           className="btn btn-secondary btn-block"
+          href="/?ba=270&sa=0&x=parrots&y=birds&z=animals"
           onClick={[Function]}
-          type="button"
         >
           ⟳
-        </button>
+        </a>
       </div>
       <div
         className="buttonContainer col-3 col-md-2 offset-md-2"
       >
-        <button
+        <a
           className="btn btn-secondary btn-block"
+          href="/?ba=225&sa=315&x=parrots&y=birds&z=animals"
           onClick={[Function]}
-          type="button"
         >
           ⟲
-        </button>
+        </a>
       </div>
       <div
         className="buttonContainer col-3 col-md-2"
       >
-        <button
+        <a
           className="btn btn-secondary btn-block"
+          href="/?ba=315&sa=315&x=parrots&y=birds&z=animals"
           onClick={[Function]}
-          type="button"
         >
           ⟳
-        </button>
+        </a>
       </div>
     </div>
     <div

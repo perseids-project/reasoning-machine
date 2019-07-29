@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { func, shape, string } from 'prop-types';
+import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 
 import styles from './Machine.module.css';
@@ -263,27 +264,27 @@ class Machine extends Component {
   constructor(props) {
     super(props);
 
-    this.rotateBottom = this.rotateBottom.bind(this);
-    this.rotateTop = this.rotateTop.bind(this);
+    this.rotateBottomLink = this.rotateBottomLink.bind(this);
+    this.rotateTopLink = this.rotateTopLink.bind(this);
     this.updateInput = this.updateInput.bind(this);
   }
 
-  rotateBottom(angle) {
-    const { history, location: { search } } = this.props;
+  rotateBottomLink(angle) {
+    const { location: { search } } = this.props;
     const query = fromQuery(queryString.parse(search));
 
     query.ba = mod(query.ba + angle, 360);
 
-    history.push({ search: queryString.stringify(query) });
+    return `./?${queryString.stringify(query)}`;
   }
 
-  rotateTop(angle) {
-    const { history, location: { search } } = this.props;
+  rotateTopLink(angle) {
+    const { location: { search } } = this.props;
     const query = fromQuery(queryString.parse(search));
 
     query.sa = mod(query.sa + angle, 360);
 
-    history.push({ search: queryString.stringify(query) });
+    return `./?${queryString.stringify(query)}`;
   }
 
   updateInput(event) {
@@ -300,7 +301,7 @@ class Machine extends Component {
     const {
       bottomAngle, topAngle, x, y, z,
     } = this.state;
-    const { rotateTop, rotateBottom, updateInput } = this;
+    const { rotateBottomLink, rotateTopLink, updateInput } = this;
 
     return (
       <div className={`container pt-4 ${styles.text}`}>
@@ -326,40 +327,36 @@ class Machine extends Component {
         </div>
         <div className="form-row">
           <div className={`${styles.buttonContainer} col-3 col-md-2 offset-md-1`}>
-            <button
-              type="button"
+            <Link
               className="btn btn-secondary btn-block"
-              onClick={() => rotateTop(-rotation)}
+              to={rotateTopLink(-rotation)}
             >
               ⟲
-            </button>
+            </Link>
           </div>
           <div className={`${styles.buttonContainer} col-3 col-md-2`}>
-            <button
-              type="button"
+            <Link
               className="btn btn-secondary btn-block"
-              onClick={() => rotateTop(rotation)}
+              to={rotateTopLink(rotation)}
             >
               ⟳
-            </button>
+            </Link>
           </div>
           <div className={`${styles.buttonContainer} col-3 col-md-2 offset-md-2`}>
-            <button
-              type="button"
+            <Link
               className="btn btn-secondary btn-block"
-              onClick={() => rotateBottom(-rotation)}
+              to={rotateBottomLink(-rotation)}
             >
               ⟲
-            </button>
+            </Link>
           </div>
           <div className={`${styles.buttonContainer} col-3 col-md-2`}>
-            <button
-              type="button"
+            <Link
               className="btn btn-secondary btn-block"
-              onClick={() => rotateBottom(rotation)}
+              to={rotateBottomLink(rotation)}
             >
               ⟳
-            </button>
+            </Link>
           </div>
         </div>
 
