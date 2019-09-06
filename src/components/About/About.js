@@ -42,7 +42,7 @@ const About = () => (
           The top piece has a number of holes punched in it and the bottom
           piece has sections marked with colored tape.
           The two pieces are attached with a pin, which allows the top piece
-          to spin, and as it spins, it shows different combinations of
+          to spin. As it spins, it shows different combinations of
           figures and colors.
         </p>
 
@@ -80,7 +80,7 @@ const About = () => (
         </p>
 
         <p>
-          The machine is based on a logic system created by the Scottish philosopher
+          The machine is based on a logic system developed by the Scottish philosopher
           {' '}
           <a href="https://en.wikipedia.org/wiki/Sir_William_Hamilton,_9th_Baronet">
             Sir William Hamilton
@@ -96,7 +96,7 @@ const About = () => (
           , but it doubles the number of terms by adding quantification
           (i.e.
           {' '}
-          <em>all of</em>, <em>some of</em>).
+          <em>all of</em> and <em>some of</em>).
           For example, where Aristotle might say &quot;all humans are animals,&quot;
           Hamilton sees two different statements: &quot;all humans are <em>some</em> animals,&quot;
           and &quot;all humans are <em>all</em> animals.&quot;
@@ -105,8 +105,8 @@ const About = () => (
         <p>
           D&apos;Arcy&apos;s machine is designed to produce valid syllogisms
           in Hamilton&apos;s system and identify invalid ones.
-          For example, aligning the basedboard to A and the spinner to A
-          produces the syllogism:
+          For example, aligning the baseboard to <em>A</em> and the spinner
+          to <em>A</em> produces the syllogism:
         </p>
 
         <ul>

@@ -113,7 +113,7 @@ Array [
             "A Very Simple Reasoning Machine."
           </a>
            
-          This device consists of two pieces of cardboard with one placed on top of the other. The top piece has a number of holes punched in it and the bottom piece has sections marked with colored tape. The two pieces are attached with a pin, which allows the top piece to spin, and as it spins, it shows different combinations of figures and colors.
+          This device consists of two pieces of cardboard with one placed on top of the other. The top piece has a number of holes punched in it and the bottom piece has sections marked with colored tape. The two pieces are attached with a pin, which allows the top piece to spin. As it spins, it shows different combinations of figures and colors.
         </p>
         <p
           className="text-center"
@@ -153,7 +153,7 @@ Array [
           explaining how it works.
         </p>
         <p>
-          The machine is based on a logic system created by the Scottish philosopher
+          The machine is based on a logic system developed by the Scottish philosopher
            
           <a
             href="https://en.wikipedia.org/wiki/Sir_William_Hamilton,_9th_Baronet"
@@ -173,7 +173,7 @@ Array [
           <em>
             all of
           </em>
-          , 
+           and 
           <em>
             some of
           </em>
@@ -188,7 +188,15 @@ Array [
            animals."
         </p>
         <p>
-          D'Arcy's machine is designed to produce valid syllogisms in Hamilton's system and identify invalid ones. For example, aligning the basedboard to A and the spinner to A produces the syllogism:
+          D'Arcy's machine is designed to produce valid syllogisms in Hamilton's system and identify invalid ones. For example, aligning the baseboard to 
+          <em>
+            A
+          </em>
+           and the spinner to 
+          <em>
+            A
+          </em>
+           produces the syllogism:
         </p>
         <ul>
           <li>
