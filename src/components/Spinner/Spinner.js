@@ -29,14 +29,13 @@ const nearestAngle = (prevAngle, angle) => {
 };
 
 class Spinner extends Component {
-  static propTypes = {
-    bottomAngle: number.isRequired,
-    topAngle: number.isRequired,
-  };
+  constructor(props) {
+    super(props);
 
-  state = {
-    topAngle: 0,
-    bottomAngle: 0,
+    this.state = {
+      topAngle: 0,
+      bottomAngle: 0,
+    };
   }
 
   static getDerivedStateFromProps(
@@ -71,5 +70,10 @@ class Spinner extends Component {
     );
   }
 }
+
+Spinner.propTypes = {
+  bottomAngle: number.isRequired,
+  topAngle: number.isRequired,
+};
 
 export default Spinner;

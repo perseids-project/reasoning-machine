@@ -39,11 +39,6 @@ const fromQuery = (search) => {
 };
 
 class Machine extends Component {
-  static propTypes = {
-    history: shape({ push: func }).isRequired,
-    location: shape({ search: string }).isRequired,
-  };
-
   constructor(props) {
     super(props);
 
@@ -189,5 +184,11 @@ class Machine extends Component {
     );
   }
 }
+
+Machine.propTypes = {
+  history: shape({ push: func }).isRequired,
+  location: shape({ search: string }).isRequired,
+};
+
 
 export default Machine;
