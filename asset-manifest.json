@@ -1,22 +1,30 @@
 {
   "files": {
     "main.css": "/reasoning-machine/static/css/main.9cb4b77d.chunk.css",
-    "main.js": "/reasoning-machine/static/js/main.801044e0.chunk.js",
-    "main.js.map": "/reasoning-machine/static/js/main.801044e0.chunk.js.map",
-    "runtime~main.js": "/reasoning-machine/static/js/runtime~main.785f22e1.js",
-    "runtime~main.js.map": "/reasoning-machine/static/js/runtime~main.785f22e1.js.map",
-    "static/css/2.8492df0f.chunk.css": "/reasoning-machine/static/css/2.8492df0f.chunk.css",
-    "static/js/2.a76529c3.chunk.js": "/reasoning-machine/static/js/2.a76529c3.chunk.js",
-    "static/js/2.a76529c3.chunk.js.map": "/reasoning-machine/static/js/2.a76529c3.chunk.js.map",
+    "main.js": "/reasoning-machine/static/js/main.57ec59e9.chunk.js",
+    "main.js.map": "/reasoning-machine/static/js/main.57ec59e9.chunk.js.map",
+    "runtime-main.js": "/reasoning-machine/static/js/runtime-main.9b175792.js",
+    "runtime-main.js.map": "/reasoning-machine/static/js/runtime-main.9b175792.js.map",
+    "static/css/2.426ab5d2.chunk.css": "/reasoning-machine/static/css/2.426ab5d2.chunk.css",
+    "static/js/2.2275ca73.chunk.js": "/reasoning-machine/static/js/2.2275ca73.chunk.js",
+    "static/js/2.2275ca73.chunk.js.map": "/reasoning-machine/static/js/2.2275ca73.chunk.js.map",
     "index.html": "/reasoning-machine/index.html",
-    "precache-manifest.b9e354caf56c13849add3e7655e9b61a.js": "/reasoning-machine/precache-manifest.b9e354caf56c13849add3e7655e9b61a.js",
+    "precache-manifest.406f5a15cae1e4d8a3aeaf2fadb9698f.js": "/reasoning-machine/precache-manifest.406f5a15cae1e4d8a3aeaf2fadb9698f.js",
     "service-worker.js": "/reasoning-machine/service-worker.js",
-    "static/css/2.8492df0f.chunk.css.map": "/reasoning-machine/static/css/2.8492df0f.chunk.css.map",
+    "static/css/2.426ab5d2.chunk.css.map": "/reasoning-machine/static/css/2.426ab5d2.chunk.css.map",
     "static/css/main.9cb4b77d.chunk.css.map": "/reasoning-machine/static/css/main.9cb4b77d.chunk.css.map",
+    "static/js/2.2275ca73.chunk.js.LICENSE": "/reasoning-machine/static/js/2.2275ca73.chunk.js.LICENSE",
     "static/media/index.css": "/reasoning-machine/static/media/tinos-latin-700italic.ec035d3e.woff",
     "static/media/bottom.svg": "/reasoning-machine/static/media/bottom.0525589f.svg",
     "static/media/machine-rotated.jpg": "/reasoning-machine/static/media/machine-rotated.862df7bb.jpg",
     "static/media/machine.jpg": "/reasoning-machine/static/media/machine.1e7ec382.jpg",
     "static/media/top.svg": "/reasoning-machine/static/media/top.73de132d.svg"
-  }
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9b175792.js",
+    "static/css/2.426ab5d2.chunk.css",
+    "static/js/2.2275ca73.chunk.js",
+    "static/css/main.9cb4b77d.chunk.css",
+    "static/js/main.57ec59e9.chunk.js"
+  ]
 }
