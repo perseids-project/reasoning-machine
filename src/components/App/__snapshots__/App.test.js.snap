@@ -27,7 +27,6 @@ Array [
       />
     </button>
     <div
-      aria-expanded="false"
       className="collapse navbar-collapse"
       style={Object {}}
     >
@@ -381,7 +380,6 @@ Array [
       />
     </button>
     <div
-      aria-expanded="false"
       className="collapse navbar-collapse"
       style={Object {}}
     >
@@ -761,7 +759,6 @@ Array [
       />
     </button>
     <div
-      aria-expanded="false"
       className="collapse navbar-collapse"
       style={Object {}}
     >
@@ -1141,7 +1138,6 @@ Array [
       />
     </button>
     <div
-      aria-expanded="false"
       className="collapse navbar-collapse"
       style={Object {}}
     >
