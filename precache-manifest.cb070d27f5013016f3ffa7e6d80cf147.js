@@ -1,31 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8ee30443e950b1f2fccfd0be7ec82637",
+    "revision": "0818edd35558fcbceb5803ff85c35b1c",
     "url": "/reasoning-machine/index.html"
   },
   {
-    "revision": "9c6f2f02809bdad988ee",
-    "url": "/reasoning-machine/static/css/2.40020317.chunk.css"
+    "revision": "7772ec0d57ab9c269904",
+    "url": "/reasoning-machine/static/css/2.a5c777ed.chunk.css"
   },
   {
-    "revision": "1d1eb2ad4a3653c10b3d",
-    "url": "/reasoning-machine/static/css/main.9cb4b77d.chunk.css"
+    "revision": "6e559ef7d9951bc0b25d",
+    "url": "/reasoning-machine/static/css/main.f36d9929.chunk.css"
   },
   {
-    "revision": "9c6f2f02809bdad988ee",
-    "url": "/reasoning-machine/static/js/2.40dca8d8.chunk.js"
+    "revision": "7772ec0d57ab9c269904",
+    "url": "/reasoning-machine/static/js/2.9c0fd873.chunk.js"
   },
   {
-    "revision": "86afaa925e0f432774bf95b19b6933fb",
-    "url": "/reasoning-machine/static/js/2.40dca8d8.chunk.js.LICENSE"
+    "revision": "3453b8997016469371284a28c0e873e2",
+    "url": "/reasoning-machine/static/js/2.9c0fd873.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1d1eb2ad4a3653c10b3d",
-    "url": "/reasoning-machine/static/js/main.be3180fe.chunk.js"
+    "revision": "6e559ef7d9951bc0b25d",
+    "url": "/reasoning-machine/static/js/main.87ddabe0.chunk.js"
   },
   {
-    "revision": "48aab0e29e5d4278a0d0",
-    "url": "/reasoning-machine/static/js/runtime-main.73b92ba4.js"
+    "revision": "04c0343fc84da7c56b85",
+    "url": "/reasoning-machine/static/js/runtime-main.b5e9683f.js"
   },
   {
     "revision": "01337cbf8cb58f21e1411c4c9ae23c87",
