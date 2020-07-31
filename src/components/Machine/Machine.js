@@ -111,7 +111,7 @@ class Machine extends Component {
         <div className="form-row">
           <div className={`${styles.buttonContainer} col-3 col-md-2 offset-md-1`}>
             <Link
-              className="btn btn-secondary btn-block"
+              className={`${styles.buttonText} btn btn-secondary btn-block`}
               to={rotateTopLink(-rotation)}
             >
               ⟲
@@ -119,7 +119,7 @@ class Machine extends Component {
           </div>
           <div className={`${styles.buttonContainer} col-3 col-md-2`}>
             <Link
-              className="btn btn-secondary btn-block"
+              className={`${styles.buttonText} btn btn-secondary btn-block`}
               to={rotateTopLink(rotation)}
             >
               ⟳
@@ -127,7 +127,7 @@ class Machine extends Component {
           </div>
           <div className={`${styles.buttonContainer} col-3 col-md-2 offset-md-2`}>
             <Link
-              className="btn btn-secondary btn-block"
+              className={`${styles.buttonText} btn btn-secondary btn-block`}
               to={rotateBottomLink(-rotation)}
             >
               ⟲
@@ -135,7 +135,7 @@ class Machine extends Component {
           </div>
           <div className={`${styles.buttonContainer} col-3 col-md-2`}>
             <Link
-              className="btn btn-secondary btn-block"
+              className={`${styles.buttonText} btn btn-secondary btn-block`}
               to={rotateBottomLink(rotation)}
             >
               ⟳

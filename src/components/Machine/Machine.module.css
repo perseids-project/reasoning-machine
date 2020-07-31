@@ -11,6 +11,12 @@
   z-index: 100;
 }
 
+.buttonText {
+  line-height: 24px !important;
+  font-weight: bold !important;
+  font-size: 24px !important;
+}
+
 .inputTable {
   margin-top: 50vh;
   margin-left: 10vh;
