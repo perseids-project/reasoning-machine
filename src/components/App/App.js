@@ -21,6 +21,7 @@ function App() {
       <PerseidsFooter
         report="https://github.com/perseids-project/reasoning-machine"
         github="https://github.com/perseids-project/reasoning-machine/issues"
+        doi="10.5281/zenodo.3968743"
       />
     </>
   );
