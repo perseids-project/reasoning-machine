@@ -169,7 +169,6 @@ class Machine extends Component {
                 <input type="text" className="form-control" aria-label="Z" aria-describedby="input z" name="z" value={z} onChange={updateInput} />
               </div>
 
-
               <Table
                 x={x}
                 y={y}
@@ -189,6 +188,5 @@ Machine.propTypes = {
   history: shape({ push: func }).isRequired,
   location: shape({ search: string }).isRequired,
 };
-
 
 export default Machine;

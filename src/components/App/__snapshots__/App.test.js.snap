@@ -291,7 +291,7 @@ Array [
       <span
         className="navbar-text"
       >
-        © The Perseids Project 2020
+        The Perseids Project
       </span>
       <ul
         className="navbar-nav my-2 my-lg-02 flex-row"
@@ -300,7 +300,7 @@ Array [
           className="nav-item"
         >
           <a
-            className="nav-link p-2"
+            className="nav-link py-2 pl-1 pl-sm-2 pr-1 pr-sm-2"
             href="https://github.com/perseids-project/reasoning-machine"
             rel="noopener noreferrer"
             target="_blank"
@@ -308,7 +308,7 @@ Array [
             <img
               alt="Report Icon"
               className="perseids-react-components--octicon"
-              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDJhMSAxIDAgMDExLTFoMTRhMSAxIDAgMDExIDF2OWExIDEgMCAwMS0xIDFIN2wtNCA0di00SDFhMSAxIDAgMDEtMS0xVjJ6bTEgMGgxNHY5SDYuNUw0IDEzLjVWMTFIMVYyem02IDZoMnYySDdWOHptMC01aDJ2NEg3VjN6Ii8+PC9zdmc+"
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xLjc1IDEuNWEuMjUuMjUgMCAwMC0uMjUuMjV2OS41YzAgLjEzOC4xMTIuMjUuMjUuMjVoMmEuNzUuNzUgMCAwMS43NS43NXYyLjE5bDIuNzItMi43MmEuNzUuNzUgMCAwMS41My0uMjJoNi41YS4yNS4yNSAwIDAwLjI1LS4yNXYtOS41YS4yNS4yNSAwIDAwLS4yNS0uMjVIMS43NXpNMCAxLjc1QzAgLjc4NC43ODQgMCAxLjc1IDBoMTIuNUMxNS4yMTYgMCAxNiAuNzg0IDE2IDEuNzV2OS41QTEuNzUgMS43NSAwIDAxMTQuMjUgMTNIOC4wNmwtMi41NzMgMi41NzNBMS40NTcgMS40NTcgMCAwMTMgMTQuNTQzVjEzSDEuNzVBMS43NSAxLjc1IDAgMDEwIDExLjI1di05LjV6TTkgOWExIDEgMCAxMS0yIDAgMSAxIDAgMDEyIDB6bS0uMjUtNS4yNWEuNzUuNzUgMCAwMC0xLjUgMHYyLjVhLjc1Ljc1IDAgMDAxLjUgMHYtMi41eiIvPjwvc3ZnPg=="
               title="Report Issue"
             />
           </a>
@@ -317,7 +317,7 @@ Array [
           className="nav-item"
         >
           <a
-            className="nav-link p-2"
+            className="nav-link py-2 pl-1 pl-sm-2 pr-1 pr-sm-2"
             href="https://github.com/perseids-project/reasoning-machine/issues"
             rel="noopener noreferrer"
             target="_blank"
@@ -334,7 +334,7 @@ Array [
           className="nav-item"
         >
           <a
-            className="nav-link p-2"
+            className="nav-link py-2 pl-1 pl-sm-2 pr-0"
             href="https://twitter.com/PerseidsProject"
             rel="noopener noreferrer"
             target="_blank"
@@ -670,7 +670,7 @@ Array [
       <span
         className="navbar-text"
       >
-        © The Perseids Project 2020
+        The Perseids Project
       </span>
       <ul
         className="navbar-nav my-2 my-lg-02 flex-row"
@@ -679,7 +679,7 @@ Array [
           className="nav-item"
         >
           <a
-            className="nav-link p-2"
+            className="nav-link py-2 pl-1 pl-sm-2 pr-1 pr-sm-2"
             href="https://github.com/perseids-project/reasoning-machine"
             rel="noopener noreferrer"
             target="_blank"
@@ -687,7 +687,7 @@ Array [
             <img
               alt="Report Icon"
               className="perseids-react-components--octicon"
-              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDJhMSAxIDAgMDExLTFoMTRhMSAxIDAgMDExIDF2OWExIDEgMCAwMS0xIDFIN2wtNCA0di00SDFhMSAxIDAgMDEtMS0xVjJ6bTEgMGgxNHY5SDYuNUw0IDEzLjVWMTFIMVYyem02IDZoMnYySDdWOHptMC01aDJ2NEg3VjN6Ii8+PC9zdmc+"
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xLjc1IDEuNWEuMjUuMjUgMCAwMC0uMjUuMjV2OS41YzAgLjEzOC4xMTIuMjUuMjUuMjVoMmEuNzUuNzUgMCAwMS43NS43NXYyLjE5bDIuNzItMi43MmEuNzUuNzUgMCAwMS41My0uMjJoNi41YS4yNS4yNSAwIDAwLjI1LS4yNXYtOS41YS4yNS4yNSAwIDAwLS4yNS0uMjVIMS43NXpNMCAxLjc1QzAgLjc4NC43ODQgMCAxLjc1IDBoMTIuNUMxNS4yMTYgMCAxNiAuNzg0IDE2IDEuNzV2OS41QTEuNzUgMS43NSAwIDAxMTQuMjUgMTNIOC4wNmwtMi41NzMgMi41NzNBMS40NTcgMS40NTcgMCAwMTMgMTQuNTQzVjEzSDEuNzVBMS43NSAxLjc1IDAgMDEwIDExLjI1di05LjV6TTkgOWExIDEgMCAxMS0yIDAgMSAxIDAgMDEyIDB6bS0uMjUtNS4yNWEuNzUuNzUgMCAwMC0xLjUgMHYyLjVhLjc1Ljc1IDAgMDAxLjUgMHYtMi41eiIvPjwvc3ZnPg=="
               title="Report Issue"
             />
           </a>
@@ -696,7 +696,7 @@ Array [
           className="nav-item"
         >
           <a
-            className="nav-link p-2"
+            className="nav-link py-2 pl-1 pl-sm-2 pr-1 pr-sm-2"
             href="https://github.com/perseids-project/reasoning-machine/issues"
             rel="noopener noreferrer"
             target="_blank"
@@ -713,7 +713,7 @@ Array [
           className="nav-item"
         >
           <a
-            className="nav-link p-2"
+            className="nav-link py-2 pl-1 pl-sm-2 pr-0"
             href="https://twitter.com/PerseidsProject"
             rel="noopener noreferrer"
             target="_blank"
@@ -1049,7 +1049,7 @@ Array [
       <span
         className="navbar-text"
       >
-        © The Perseids Project 2020
+        The Perseids Project
       </span>
       <ul
         className="navbar-nav my-2 my-lg-02 flex-row"
@@ -1058,7 +1058,7 @@ Array [
           className="nav-item"
         >
           <a
-            className="nav-link p-2"
+            className="nav-link py-2 pl-1 pl-sm-2 pr-1 pr-sm-2"
             href="https://github.com/perseids-project/reasoning-machine"
             rel="noopener noreferrer"
             target="_blank"
@@ -1066,7 +1066,7 @@ Array [
             <img
               alt="Report Icon"
               className="perseids-react-components--octicon"
-              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDJhMSAxIDAgMDExLTFoMTRhMSAxIDAgMDExIDF2OWExIDEgMCAwMS0xIDFIN2wtNCA0di00SDFhMSAxIDAgMDEtMS0xVjJ6bTEgMGgxNHY5SDYuNUw0IDEzLjVWMTFIMVYyem02IDZoMnYySDdWOHptMC01aDJ2NEg3VjN6Ii8+PC9zdmc+"
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xLjc1IDEuNWEuMjUuMjUgMCAwMC0uMjUuMjV2OS41YzAgLjEzOC4xMTIuMjUuMjUuMjVoMmEuNzUuNzUgMCAwMS43NS43NXYyLjE5bDIuNzItMi43MmEuNzUuNzUgMCAwMS41My0uMjJoNi41YS4yNS4yNSAwIDAwLjI1LS4yNXYtOS41YS4yNS4yNSAwIDAwLS4yNS0uMjVIMS43NXpNMCAxLjc1QzAgLjc4NC43ODQgMCAxLjc1IDBoMTIuNUMxNS4yMTYgMCAxNiAuNzg0IDE2IDEuNzV2OS41QTEuNzUgMS43NSAwIDAxMTQuMjUgMTNIOC4wNmwtMi41NzMgMi41NzNBMS40NTcgMS40NTcgMCAwMTMgMTQuNTQzVjEzSDEuNzVBMS43NSAxLjc1IDAgMDEwIDExLjI1di05LjV6TTkgOWExIDEgMCAxMS0yIDAgMSAxIDAgMDEyIDB6bS0uMjUtNS4yNWEuNzUuNzUgMCAwMC0xLjUgMHYyLjVhLjc1Ljc1IDAgMDAxLjUgMHYtMi41eiIvPjwvc3ZnPg=="
               title="Report Issue"
             />
           </a>
@@ -1075,7 +1075,7 @@ Array [
           className="nav-item"
         >
           <a
-            className="nav-link p-2"
+            className="nav-link py-2 pl-1 pl-sm-2 pr-1 pr-sm-2"
             href="https://github.com/perseids-project/reasoning-machine/issues"
             rel="noopener noreferrer"
             target="_blank"
@@ -1092,7 +1092,7 @@ Array [
           className="nav-item"
         >
           <a
-            className="nav-link p-2"
+            className="nav-link py-2 pl-1 pl-sm-2 pr-0"
             href="https://twitter.com/PerseidsProject"
             rel="noopener noreferrer"
             target="_blank"
@@ -2632,7 +2632,7 @@ Array [
       <span
         className="navbar-text"
       >
-        © The Perseids Project 2020
+        The Perseids Project
       </span>
       <ul
         className="navbar-nav my-2 my-lg-02 flex-row"
@@ -2641,7 +2641,7 @@ Array [
           className="nav-item"
         >
           <a
-            className="nav-link p-2"
+            className="nav-link py-2 pl-1 pl-sm-2 pr-1 pr-sm-2"
             href="https://github.com/perseids-project/reasoning-machine"
             rel="noopener noreferrer"
             target="_blank"
@@ -2649,7 +2649,7 @@ Array [
             <img
               alt="Report Icon"
               className="perseids-react-components--octicon"
-              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDJhMSAxIDAgMDExLTFoMTRhMSAxIDAgMDExIDF2OWExIDEgMCAwMS0xIDFIN2wtNCA0di00SDFhMSAxIDAgMDEtMS0xVjJ6bTEgMGgxNHY5SDYuNUw0IDEzLjVWMTFIMVYyem02IDZoMnYySDdWOHptMC01aDJ2NEg3VjN6Ii8+PC9zdmc+"
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xLjc1IDEuNWEuMjUuMjUgMCAwMC0uMjUuMjV2OS41YzAgLjEzOC4xMTIuMjUuMjUuMjVoMmEuNzUuNzUgMCAwMS43NS43NXYyLjE5bDIuNzItMi43MmEuNzUuNzUgMCAwMS41My0uMjJoNi41YS4yNS4yNSAwIDAwLjI1LS4yNXYtOS41YS4yNS4yNSAwIDAwLS4yNS0uMjVIMS43NXpNMCAxLjc1QzAgLjc4NC43ODQgMCAxLjc1IDBoMTIuNUMxNS4yMTYgMCAxNiAuNzg0IDE2IDEuNzV2OS41QTEuNzUgMS43NSAwIDAxMTQuMjUgMTNIOC4wNmwtMi41NzMgMi41NzNBMS40NTcgMS40NTcgMCAwMTMgMTQuNTQzVjEzSDEuNzVBMS43NSAxLjc1IDAgMDEwIDExLjI1di05LjV6TTkgOWExIDEgMCAxMS0yIDAgMSAxIDAgMDEyIDB6bS0uMjUtNS4yNWEuNzUuNzUgMCAwMC0xLjUgMHYyLjVhLjc1Ljc1IDAgMDAxLjUgMHYtMi41eiIvPjwvc3ZnPg=="
               title="Report Issue"
             />
           </a>
@@ -2658,7 +2658,7 @@ Array [
           className="nav-item"
         >
           <a
-            className="nav-link p-2"
+            className="nav-link py-2 pl-1 pl-sm-2 pr-1 pr-sm-2"
             href="https://github.com/perseids-project/reasoning-machine/issues"
             rel="noopener noreferrer"
             target="_blank"
@@ -2675,7 +2675,7 @@ Array [
           className="nav-item"
         >
           <a
-            className="nav-link p-2"
+            className="nav-link py-2 pl-1 pl-sm-2 pr-0"
             href="https://twitter.com/PerseidsProject"
             rel="noopener noreferrer"
             target="_blank"
