@@ -10,6 +10,7 @@
   right: 0;
   height: 50vh;
   transition: transform 0.8s ease-in-out;
+  max-width: 100%;
 }
 
 @media (min-width: 768px) {
