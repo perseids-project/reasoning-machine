@@ -90,22 +90,22 @@ class Machine extends Component {
       <div className={`container pt-4 ${styles.text}`}>
         <div className="row">
           <div className="col-12">
-            <h2 className="text-center mb-3">
+            <h1 className="text-center mb-3 h2">
               D&apos;Arcy Thompson&apos;s Reasoning Machine
-            </h2>
+            </h1>
           </div>
         </div>
 
         <div className="form-row text-center">
           <div className="col-6">
-            <h5>
+            <h2 className="h5">
               Rotate spinner
-            </h5>
+            </h2>
           </div>
           <div className="col-6">
-            <h5>
+            <h2 className="h5">
               Rotate base-board
-            </h5>
+            </h2>
           </div>
         </div>
         <div className="form-row">
